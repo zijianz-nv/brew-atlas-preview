@@ -1,0 +1,107 @@
+/* Light sky palette for the local Apple design study. Geometry and zoom
+   remain owned by the celestial layout; beer images are never filtered. */
+.app.apple-ui .celestial-stars circle {
+  fill:#8193a0;
+}
+.app.apple-ui .celestial-stars {
+  opacity:.46;
+}
+/* The dark theme dims overview metadata; retain normal contrast on white. */
+.app.apple-ui:has(.brew-globe-view[data-sky-expanded="true"]) .map-summary p {
+  opacity:1;
+}
+
+/* Keep real star positions and individual magnitudes. A thin slate line
+   and darker core stay legible without turning the sky into a heavy mesh. */
+.app.apple-ui .celestial-constellation .constellation-art {
+  opacity:.82;
+}
+.app.apple-ui .constellation-art>g[fill="none"] {
+  stroke:#7b8c9a;
+  stroke-opacity:.53;
+}
+.app.apple-ui .constellation-art>g:not([fill="none"]) {
+  fill:#566976;
+}
+.app.apple-ui .celestial-bright-stars .constellation-art {
+  opacity:.96;
+}
+.app.apple-ui .celestial-bright-stars .constellation-art>g[fill="none"] {
+  stroke:#a8895d;
+  stroke-opacity:.68;
+}
+.app.apple-ui .celestial-bright-stars .constellation-art>g:not([fill="none"]) {
+  fill:#98753e;
+}
+.app.apple-ui .constellation-art>g[fill="#edb080"] {
+  fill:#ad7549;
+}
+/* Every constellation caption has equal emphasis, including Libra/Scorpius. */
+.app.apple-ui .celestial-constellation .constellation-name {
+  fill:#717c86;
+  opacity:.96;
+}
+
+.app.apple-ui .celestial-background figcaption,
+.app.apple-ui .celestial-background .celestial-outer-planets .celestial-body figcaption,
+.app.apple-ui .celestial-background .celestial-sun figcaption,
+.app.apple-ui .celestial-earth-label {
+  color:#697782;
+  opacity:.9;
+}
+.app.apple-ui .celestial-orbits .orbit-back {
+  stroke:#90a1ad;
+  stroke-opacity:.09;
+}
+.app.apple-ui .celestial-orbits .orbit-front {
+  stroke:#8596a3;
+  stroke-opacity:.18;
+}
+.app.apple-ui .meteor-trail {
+  background:linear-gradient(90deg,transparent,rgba(123,145,161,.26) 55%,rgba(91,119,139,.8));
+}
+.app.apple-ui .meteor-trail::after {
+  background:#6e8b9d;
+}
+
+/* These are HTML labels, separate from both the WebGL canvas and photos. */
+.app.apple-ui .brew-globe-view .globe-bottle-tooltip,
+.app.apple-ui .brew-globe-view .float-tooltip-kap {
+  color:#464d53;
+  background:rgba(255,255,255,.97);
+  border:1px solid #dce1e5;
+  box-shadow:0 4px 18px #35455618;
+}
+.app.apple-ui .brew-globe-view .globe-photo-state {
+  border-color:#c8cfd4;
+  background:#f4f5f6ed;
+  color:#78828a;
+}
+
+/* The SVG fallback uses the same quiet ocean/land palette as the globe. */
+.app.apple-ui .globe-flat-map>svg>rect {
+  fill:#e0e6e9;
+}
+.app.apple-ui .globe-flat-map>svg>path[data-country] {
+  fill:#f0eee7;
+  stroke:#aab4b7;
+}
+.app.apple-ui .globe-flat-map>svg>path[data-selected="true"] {
+  fill:#eee1ca;
+  stroke:#b1905e;
+}
+.app.apple-ui .globe-flat-map .country-outline-flat path {
+  stroke:#b28b53;
+}
+.app.apple-ui .globe-flat-map>span {
+  /* The fallback caption's original color is an inline style. */
+  color:#7a858c!important;
+}
+.app.apple-ui .globe-flat-map .globe-ingredient>span {
+  color:#666f67;
+}
+.app.apple-ui .globe-flat-map .globe-ingredient:hover,
+.app.apple-ui .globe-flat-map .globe-ingredient:focus-visible {
+  background:#f7f6f0e8;
+  outline-color:#aa956e;
+}

@@ -1,0 +1,464 @@
+/* Local Apple-inspired preview. The original theme is unchanged outside apple-ui. */
+.app.apple-ui .inspector,
+.app.apple-ui .modal,
+.app.apple-ui .brewery-tray,
+.app.apple-ui .ingredient-panel {
+  color:#202124;
+  background:rgba(255,255,255,.97);
+  border:1px solid rgba(60,60,67,.14);
+  box-shadow:0 16px 54px rgba(31,32,38,.12),0 2px 8px rgba(31,32,38,.04);
+  scrollbar-color:#c6c6ca transparent;
+}
+.app.apple-ui {
+  --inspector-compare-width:360px;
+  --inspector-compare-right:18px;
+  --inspector-compare-bottom:18px;
+  --inspector-compare-height:64px;
+}
+.app.apple-ui .inspector.detail-open {
+  top:84px;
+  right:18px;
+  bottom:18px;
+  left:auto;
+  width:360px;
+  border-radius:22px;
+  padding:0;
+  background:#fff;
+  scrollbar-gutter:auto;
+  overflow-x:hidden;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+.app.apple-ui:has(.compare-dock) .inspector.detail-open {
+  bottom:82px;
+  border-bottom-left-radius:0;
+  border-bottom-right-radius:0;
+}
+.app.apple-ui .inspector-top {
+  position:sticky;
+  top:0;
+  height:62px;
+  min-height:62px;
+  gap:6px;
+  padding:8px 12px 8px 20px;
+  background:rgba(255,255,255,.94);
+  border-bottom:1px solid #ececef;
+  backdrop-filter:blur(20px);
+}
+.app.apple-ui .inspector-top>span {
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.3px;
+  color:#77777d;
+}
+.app.apple-ui .inspector-top .icon-button,
+.app.apple-ui .inspector-top .inspector-random-button {
+  height:44px;
+  min-height:44px;
+  flex-shrink:0;
+  color:#626268;
+}
+.app.apple-ui .inspector-top .icon-button {
+  width:44px;
+  border-radius:50%;
+  background:#f2f2f5;
+}
+.app.apple-ui .inspector-top .inspector-random-button {
+  padding:0 12px;
+  gap:6px;
+  border:0;
+  border-radius:22px;
+  background:#f5eee5;
+  color:#94652d;
+  font-size:12px;
+  font-weight:600;
+}
+.app.apple-ui .inspector-hero,
+.app.apple-ui .inspector-hero.no-photo {
+  height:202px;
+  margin:16px 18px 0;
+  border-radius:16px;
+  background:#f3f2ef;
+  border:1px solid #edebe7;
+}
+.app.apple-ui .inspector-hero.no-photo {height:116px;}
+.app.apple-ui .bottle-aura {display:none;}
+.app.apple-ui .hero-bottle,
+.app.apple-ui .inspector-hero.cutout .hero-bottle {
+  height:172px;
+  max-width:82%;
+  filter:drop-shadow(0 8px 7px #29211b1c);
+}
+.app.apple-ui .no-photo .hero-bottle {height:88px;min-height:0;filter:none;color:#8d8a85;}
+.app.apple-ui .hero-save {
+  top:8px;
+  right:8px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  color:#8b8173;
+  background:#ffffffdf;
+  box-shadow:0 1px 5px #00000008;
+}
+.app.apple-ui .hero-save.is-saved {color:#94652d;background:#fff3de;}
+.app.apple-ui .inspector-body {padding:20px 23px 26px;}
+.app.apple-ui .detail-location {font-size:11px;line-height:1.5;color:#85858b;}
+.app.apple-ui .inspector h2 {
+  margin:8px 0 6px;
+  font-size:24px;
+  font-weight:650;
+  line-height:1.22;
+  letter-spacing:-.65px;
+  color:#242428;
+}
+.app.apple-ui .detail-style {font-size:12px;line-height:1.6;color:#78787e;}
+.app.apple-ui .beer-launch-year {font-size:11px;color:#8b8b91;margin:8px 0 16px;line-height:1.7;}
+.app.apple-ui .beer-launch-year a,
+.app.apple-ui .brewery-story>a,
+.app.apple-ui .taxonomy-evidence a,
+.app.apple-ui .source-details a {color:#95682f;}
+.app.apple-ui .beer-stats {
+  padding:15px 16px;
+  margin:20px 0;
+  border-radius:14px;
+  background:#f5f5f7;
+}
+.app.apple-ui .beer-stats>div+div {border-left:1px solid #dedee3;padding-left:19px;}
+.app.apple-ui .beer-stats strong {font-size:29px;font-weight:500;color:#36353a;letter-spacing:-.8px;}
+.app.apple-ui .beer-stats strong.missing-value {min-height:35px;font-size:18px;color:#8c8c92;letter-spacing:0;}
+.app.apple-ui .beer-stats strong small {font-size:13px;}
+.app.apple-ui .beer-stats span {font-size:10px;color:#83838b;margin-top:5px;}
+.app.apple-ui .detail-tabs {
+  display:flex;
+  gap:3px;
+  padding:3px;
+  margin:0 0 18px;
+  background:#ededf0;
+  border:0;
+  border-radius:10px;
+}
+.app.apple-ui .detail-tabs button {
+  flex:1;
+  min-height:34px;
+  padding:7px 10px;
+  border-radius:7px;
+  font-size:12px;
+  font-weight:550;
+  color:#74747c;
+}
+.app.apple-ui .detail-tabs button.active {background:#fff;color:#333338;box-shadow:0 1px 4px #00000013;}
+.app.apple-ui .detail-tabs button.active:after {display:none;}
+.app.apple-ui .taxonomy-row {border-color:#ececef;gap:10px;padding:9px 0;}
+.app.apple-ui .taxonomy-row>span {font-size:11px;color:#8a8a90;}
+.app.apple-ui .taxonomy-row button,
+.app.apple-ui .detail-flavors button {
+  padding:6px 9px;
+  border:0;
+  border-radius:7px;
+  color:#926b37;
+  background:#f5efe6;
+  font-size:11px;
+}
+.app.apple-ui .taxonomy-row small {color:#696970;font-size:11px;}
+.app.apple-ui .taxonomy-missing,
+.app.apple-ui .taxonomy-evidence,
+.app.apple-ui .catalog-note {color:#8b8b91;font-size:11px;line-height:1.7;border-color:#e7e7ec;}
+.app.apple-ui .taxonomy-evidence summary,
+.app.apple-ui .recipe-details summary,
+.app.apple-ui .source-details summary {color:#78716a;}
+.app.apple-ui .tasting-note,
+.app.apple-ui .brewery-story>p {color:#626269;font-size:13px;line-height:1.85;}
+.app.apple-ui .brewery-story h3 {font-weight:600;color:#333338;}
+.app.apple-ui .brewery-story .location-note {color:#8c8c92;}
+.app.apple-ui .recipe-details,
+.app.apple-ui .source-details {border-color:#e7e7ec;color:#78787f;}
+.app.apple-ui .recipe-details p,
+.app.apple-ui .source-details p,
+.app.apple-ui .ingredients {color:#6b6b72;}
+.app.apple-ui .ingredients dt {color:#929298;}
+.app.apple-ui .detail-actions {gap:9px;margin-top:22px;}
+.app.apple-ui .detail-actions button {
+  min-height:42px;
+  padding:10px 8px;
+  border:1px solid #e5e5e9;
+  border-radius:10px;
+  color:#64646c;
+  background:#f6f6f8;
+  font-size:12px;
+}
+.app.apple-ui .detail-actions button.active {background:#f8efe1;color:#94652d;border-color:#e9d7bb;}
+.app.apple-ui .similar {border-color:#e7e7ec;margin-top:24px;padding-top:18px;}
+.app.apple-ui .similar h4 {color:#3c3c43;font-size:12px;font-weight:600;margin-bottom:16px;}
+.app.apple-ui .similar button {gap:10px;}
+.app.apple-ui .similar .beer-photo {height:76px;}
+.app.apple-ui .similar span {color:#74747c;font-size:10px;}
+.app.apple-ui .beer-photo .photo-status {color:#8a8780;}
+.app.apple-ui .beer-awards {margin:16px 0;}
+.app.apple-ui .beer-awards>h3,
+.app.apple-ui .award-record strong,
+.app.apple-ui .award-rating b {color:#94652d;}
+.app.apple-ui .award-record {border-color:#e7e7ec;}
+.app.apple-ui .award-record span,
+.app.apple-ui .award-record small,
+.app.apple-ui .award-explanation {color:#85858b;}
+.app.apple-ui .award-record>a {color:#796e60;}
+
+/* Comparison remains in a separate footer, never floating across the description. */
+.app.apple-ui .compare-dock,
+.app.apple-ui:has(.inspector.detail-open) .compare-dock {
+  padding:10px 12px;
+  color:#64646c;
+  background:rgba(255,255,255,.97);
+  border-color:#e0e0e5;
+  border-radius:15px;
+  box-shadow:0 8px 30px #27272f17;
+  backdrop-filter:blur(20px);
+  font-size:12px;
+  gap:10px;
+}
+.app.apple-ui:has(.inspector.detail-open) .compare-dock {
+  width:360px;
+  right:18px;
+  bottom:18px;
+  height:64px;
+  border-radius:0 0 22px 22px;
+  background:#fff;
+  box-shadow:0 12px 28px #27272f10;
+}
+.app.apple-ui .compare-dock>button:not(.icon-button),
+.app.apple-ui:has(.inspector.detail-open) .compare-dock>button:not(.icon-button) {
+  min-height:40px;
+  padding:0 14px;
+  border-radius:20px;
+  color:#fff;
+  background:#a8793d;
+  font-size:12px;
+  font-weight:550;
+}
+.app.apple-ui .compare-dock>.icon-button,
+.app.apple-ui:has(.inspector.detail-open) .compare-dock>.icon-button {width:40px;height:40px;color:#85858c;}
+.app.apple-ui .toast {
+  padding:13px 20px;
+  border:1px solid #e3e3e8;
+  border-radius:26px;
+  color:#424249;
+  background:rgba(255,255,255,.98);
+  box-shadow:0 5px 28px #2626301c;
+  font-size:12px;
+}
+.app.apple-ui .toast>svg {color:#8f713e;}
+
+.app.apple-ui .modal {width:min(92vw,740px);border-radius:22px;}
+.app.apple-ui .modal::backdrop {background:#1c1c2438;backdrop-filter:blur(6px);}
+.app.apple-ui .modal>header {min-height:68px;padding:12px 24px;background:#ffffffed;border-color:#e8e8ec;backdrop-filter:blur(20px);}
+.app.apple-ui .modal>header>.icon-button {width:40px;height:40px;border-radius:50%;background:#f2f2f5;color:#77777f;}
+.app.apple-ui .modal h2 {font-size:17px;font-weight:600;letter-spacing:-.3px;color:#2f2f35;}
+.app.apple-ui .about-content {padding:10px 28px 30px;}
+.app.apple-ui .about-content p {font-size:13px;line-height:1.9;color:#6e6e76;}
+.app.apple-ui .about-stats {gap:22px;color:#929299;}
+.app.apple-ui .about-stats b {color:#37353a;font-size:30px;font-weight:550;letter-spacing:-1px;}
+.app.apple-ui .about-links a {color:#986c36;font-size:11px;}
+.app.apple-ui .comparison-image {background:#f3f2ef;border-radius:14px;}
+.app.apple-ui .comparison h3 {font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-.4px;color:#333338;}
+.app.apple-ui .comparison .country-label,
+.app.apple-ui .comparison p,
+.app.apple-ui .comparison dt,
+.app.apple-ui .comparison-footnote {color:#86868d;}
+.app.apple-ui .comparison dl>div {border-color:#e7e7eb;}
+.app.apple-ui .comparison dd {color:#55535b;}
+
+.app.apple-ui .brewery-tray {left:24px;top:168px;width:284px;border-radius:18px;}
+.app.apple-ui .brewery-tray header {padding:15px 12px 15px 18px;border-color:#e8e8ed;}
+.app.apple-ui .brewery-tray h2 {font-size:14px;font-weight:600;color:#3b3b42;}
+.app.apple-ui .brewery-tray header span {font-size:10px;color:#8d8d94;}
+.app.apple-ui .brewery-tray .icon-button {width:40px;height:40px;color:#85858c;background:#f3f3f6;border-radius:50%;}
+.app.apple-ui .tray-bottles {gap:18px 10px;padding:20px 16px;}
+.app.apple-ui .tray-bottles span {font-size:10px;color:#74747d;}
+.app.apple-ui .tray-bottles img {filter:drop-shadow(0 4px 4px #00000015);}
+.app.apple-ui .tray-more {color:#929299;border-color:#e8e8ed;font-size:11px;}
+
+.app.apple-ui .ingredient-panel {
+  left:calc(var(--apple-sidebar-width,216px) + 24px);
+  top:112px;
+  width:320px;
+  padding:20px;
+  border-radius:20px;
+}
+.app.apple-ui .ingredient-panel header>.icon-button {width:40px;height:40px;border-radius:50%;background:#f3f3f6;color:#85858d;}
+.app.apple-ui .ingredient-emblem {color:#a7834c;}
+.app.apple-ui .ingredient-panel h2 {font-size:19px;font-weight:600;letter-spacing:-.4px;}
+.app.apple-ui .ingredient-panel h3 {color:#3c3c43;font-size:16px;font-weight:600;}
+.app.apple-ui .ingredient-panel h4 {color:#57545c;font-size:12px;}
+.app.apple-ui .ingredient-panel p {color:#73737b;font-size:12px;line-height:1.85;}
+.app.apple-ui .ingredient-panel header small,
+.app.apple-ui .ingredient-region-picker {color:#96969d;}
+.app.apple-ui .ingredient-region-picker select {padding:9px 10px;border:1px solid #e4e4e9;border-radius:8px;color:#64646d;background:#f7f7f9;font-size:12px;}
+.app.apple-ui .ingredient-climate,
+.app.apple-ui .ingredient-weather,
+.app.apple-ui .ingredient-beer-list {border-color:#e7e7ec;}
+.app.apple-ui .ingredient-weather-values strong {font-weight:500;color:#45424a;}
+.app.apple-ui .ingredient-weather-values span,
+.app.apple-ui .ingredient-weather small {color:#84848d;}
+.app.apple-ui .ingredient-weather button {padding:7px 11px;border-color:#e7dccb;border-radius:8px;color:#926b38;background:#f7f0e7;}
+.app.apple-ui .weather-credit,
+.app.apple-ui .ingredient-panel footer a {color:#9c7a49;}
+.app.apple-ui .ingredient-panel p.ingredient-boundary-note,
+.app.apple-ui .ingredient-panel p.ingredient-recommendation-note {color:#96969e;}
+.app.apple-ui .ingredient-beer-card {padding:12px 4px;border-color:#ededf0;}
+.app.apple-ui .ingredient-beer-copy>strong {color:#45454d;font-size:12px;font-weight:600;}
+.app.apple-ui .ingredient-beer-copy>small {color:#99999f;}
+.app.apple-ui .ingredient-beer-copy>span {color:#a27d47;}
+
+.app.apple-ui .announcement-panel {
+  top:calc(100% + 15px);
+  width:352px;
+  background:rgba(255,255,255,.98);
+  border:1px solid #e1e1e7;
+  border-radius:20px;
+  box-shadow:0 14px 45px #27272f21;
+  color:#37373e;
+}
+.app.apple-ui .announcement-panel>header {
+  padding:17px 20px;
+  background:#ffffffed;
+  border-color:#e9e9ee;
+  backdrop-filter:blur(20px);
+}
+.app.apple-ui .announcement-panel header small {font-size:9px;color:#96969e;letter-spacing:1.5px;}
+.app.apple-ui .announcement-panel h2 {font-size:19px;font-weight:600;color:#34343b;letter-spacing:-.4px;}
+.app.apple-ui .announcement-panel header .icon-button {width:40px;height:40px;border-radius:50%;background:#f3f3f6;color:#7f7f87;}
+.app.apple-ui .announcement-list {padding:0 20px 6px;}
+.app.apple-ui .announcement-list article {padding:20px 0;border-color:#e9e9ee;}
+.app.apple-ui .announcement-date {color:#96969e;font-size:10px;}
+.app.apple-ui .announcement-date>span {font-size:9px;background:#f5eee2;color:#9a763f;border-radius:5px;padding:3px 7px;}
+.app.apple-ui .announcement-list h3 {color:#45454d;font-size:14px;font-weight:600;}
+.app.apple-ui .announcement-features dt {color:#5c5961;font-size:12px;font-weight:550;margin-bottom:5px;}
+.app.apple-ui .announcement-features dd,
+.app.apple-ui .announcement-list p,
+.app.apple-ui .announcement-list li {color:#898991;font-size:12px;line-height:1.8;}
+
+@media (hover:hover) and (pointer:fine) {
+  .app.apple-ui .inspector-top .icon-button:hover,
+  .app.apple-ui .modal>header>.icon-button:hover {background:#e9e9ed;color:#3e3e45;}
+  .app.apple-ui .detail-actions button:hover {background:#ececef;color:#45434a;border-color:#d7d7de;}
+  .app.apple-ui .detail-actions button.active:hover {background:#f0e4d1;color:#94652d;border-color:#d4b98e;}
+  .app.apple-ui .ingredient-beer-card:hover {background:#f4f4f7;}
+}
+
+@media (max-width:1100px) and (min-width:701px) {
+  .app.apple-ui {--inspector-compare-width:340px;}
+  .app.apple-ui .inspector.detail-open,
+  .app.apple-ui:has(.inspector.detail-open) .compare-dock {width:340px;}
+}
+@media (max-width:700px) {
+  .app.apple-ui {--mobile-compare-footer:calc(64px + env(safe-area-inset-bottom,0px));}
+  .app.apple-ui .detail-backdrop {background:#1c1c242a;backdrop-filter:none;}
+  .app.apple-ui .inspector.detail-open {
+    top:auto;
+    right:0;
+    bottom:0;
+    left:0;
+    width:100%;
+    max-height:62vh;
+    max-height:62dvh;
+    border-radius:26px 26px 0 0;
+    border-bottom:0;
+    box-shadow:0 -8px 40px #27272f1c;
+    scroll-padding-top:76px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .app.apple-ui:has(.compare-dock) .inspector.detail-open {
+    bottom:var(--mobile-compare-footer);
+    max-height:calc(62vh - var(--mobile-compare-footer));
+    max-height:calc(62dvh - var(--mobile-compare-footer));
+  }
+  .app.apple-ui .inspector.detail-open .inspector-top {
+    height:72px;
+    min-height:72px;
+    padding:20px 14px 8px 20px;
+    border-radius:25px 25px 0 0;
+    background:#ffffffed;
+  }
+  .app.apple-ui .inspector-top:before {
+    content:"";
+    position:absolute;
+    width:32px;
+    height:4px;
+    top:8px;
+    left:calc(50% - 16px);
+    border-radius:5px;
+    background:#d3d3d9;
+  }
+  .app.apple-ui .inspector.detail-open .inspector-top .icon-button,
+  .app.apple-ui .inspector.detail-open .inspector-random-button {width:44px;height:44px;min-height:44px;}
+  .app.apple-ui .inspector.detail-open .inspector-random-button {width:auto;}
+  .app.apple-ui .inspector.detail-open .inspector-hero {height:124px;margin:12px 18px 0;border-radius:15px;}
+  .app.apple-ui .inspector.detail-open .hero-bottle {height:106px;max-width:72%;}
+  .app.apple-ui .inspector.detail-open .inspector-hero.no-photo {height:86px;}
+  .app.apple-ui .inspector.detail-open .no-photo .hero-bottle {height:66px;min-height:0;}
+  .app.apple-ui .inspector.detail-open .hero-save {width:44px;height:44px;top:6px;right:6px;}
+  .app.apple-ui .inspector.detail-open .inspector-body {padding:14px 22px calc(24px + env(safe-area-inset-bottom,0px));}
+  .app.apple-ui .inspector.detail-open h2 {font-size:21px;line-height:1.25;margin:7px 0 5px;letter-spacing:-.5px;}
+  .app.apple-ui .inspector.detail-open .detail-location {font-size:11px;}
+  .app.apple-ui .inspector.detail-open .detail-style {font-size:12px;}
+  .app.apple-ui .inspector.detail-open .beer-launch-year {font-size:11px;margin:7px 0 12px;}
+  .app.apple-ui .inspector.detail-open .beer-stats {padding:13px 15px;margin:15px 0;}
+  .app.apple-ui .inspector.detail-open .beer-stats strong {font-size:25px;}
+  .app.apple-ui .inspector.detail-open .beer-stats strong.missing-value {font-size:17px;min-height:30px;}
+  .app.apple-ui .inspector.detail-open .beer-stats span {font-size:10px;}
+  .app.apple-ui .inspector.detail-open .detail-tabs {gap:3px;margin-bottom:14px;}
+  .app.apple-ui .inspector.detail-open .detail-tabs button {min-height:38px;padding:8px 10px;font-size:12px;}
+  .app.apple-ui .inspector.detail-open .tasting-note {font-size:13px;line-height:1.8;max-height:none;overflow:visible;margin:16px 0;padding:0;}
+  .app.apple-ui .inspector.detail-open .detail-actions button {min-height:44px;font-size:12px;}
+  .app.apple-ui .inspector.detail-open .similar .beer-photo {height:66px;}
+  .app.apple-ui .compare-dock {left:auto;right:14px;bottom:calc(var(--dock-clearance,150px) + 10px);}
+  .app.apple-ui:has(.inspector.detail-open) .compare-dock {
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:var(--mobile-compare-footer);
+    padding:9px 18px calc(9px + env(safe-area-inset-bottom,0px));
+    border-radius:0;
+    border-bottom:0;
+    box-shadow:0 -1px 10px #27272f06;
+  }
+  .app.apple-ui .compare-dock>button:not(.icon-button),
+  .app.apple-ui:has(.inspector.detail-open) .compare-dock>button:not(.icon-button),
+  .app.apple-ui .compare-dock>.icon-button,
+  .app.apple-ui:has(.inspector.detail-open) .compare-dock>.icon-button {min-height:44px;height:44px;}
+  .app.apple-ui:has(.inspector.detail-open) .toast {top:calc(78px + env(safe-area-inset-top,0px));bottom:auto;}
+  .app.apple-ui .modal {width:calc(100vw - 24px);max-height:85dvh;border-radius:22px;}
+  .app.apple-ui .modal>header {padding:12px 16px;min-height:64px;}
+  .app.apple-ui .modal>header>.icon-button {width:44px;height:44px;}
+  .app.apple-ui .modal h2 {font-size:15px;}
+  .app.apple-ui .about-content {padding:8px 22px 24px;}
+  .app.apple-ui .about-content p {font-size:12px;}
+  .app.apple-ui .about-stats {gap:18px;font-size:10px;}
+  .app.apple-ui .about-stats b {font-size:27px;}
+  .app.apple-ui .comparison {padding:18px 16px 14px;gap:16px;}
+  .app.apple-ui .comparison h3 {font-size:17px;}
+  .app.apple-ui .comparison-image {height:136px;}
+  .app.apple-ui .comparison-image img {height:118px;}
+  .app.apple-ui .brewery-tray,
+  .app.apple-ui .ingredient-panel {
+    position:fixed;
+    left:12px;
+    right:12px;
+    top:auto;
+    bottom:calc(var(--dock-clearance,160px) + 12px);
+    width:auto;
+    border-radius:20px;
+  }
+  .app.apple-ui .brewery-tray {max-height:240px;}
+  .app.apple-ui .brewery-tray header {padding:12px 12px 12px 18px;}
+  .app.apple-ui .brewery-tray .icon-button,
+  .app.apple-ui .ingredient-panel header>.icon-button {width:44px;height:44px;}
+  .app.apple-ui .tray-bottles {padding:16px 18px;gap:18px;}
+  .app.apple-ui .tray-bottles button {width:70px;}
+  .app.apple-ui .tray-bottles span {font-size:10px;max-width:70px;}
+  .app.apple-ui .ingredient-panel {max-height:min(52dvh,calc(100dvh - var(--dock-clearance,160px) - 100px));padding:17px 20px;}
+  .app.apple-ui .ingredient-region-picker select {min-height:40px;font-size:16px;}
+  .app.apple-ui .announcement-panel {position:fixed;right:12px;top:74px;max-height:calc(100dvh - 160px);}
+  .app.apple-ui .announcement-panel header .icon-button {width:44px;height:44px;}
+}

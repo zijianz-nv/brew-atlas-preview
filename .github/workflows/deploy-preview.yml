@@ -1,0 +1,88 @@
+name: Deploy Brew Atlas Preview
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preview-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - name: Check out preview design
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          path: design
+      - name: Check out pinned Brew Atlas source and assets
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          repository: zijianz-nv/brew-atlas
+          ref: 7daa7cc59dbfb0def1520fe9b750cfb2e6346393
+          path: site
+          persist-credentials: false
+      - name: Apply preview design
+        run: cp -R design/overrides/. site/
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Install dependencies
+        working-directory: site
+        run: npm ci
+      - name: Configure preview Pages
+        id: pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - name: Build independent Apple preview
+        working-directory: site
+        # Archive links must reference a real commit in the source repository.
+        run: GITHUB_SHA=$(git rev-parse HEAD) npm run build
+        env:
+          VITE_BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+          VITE_DEFAULT_DESIGN: apple
+      - name: Test data and map behavior
+        working-directory: site
+        run: npm test
+      - name: Record preview build identity
+        run: |
+          node --input-type=module <<'NODE'
+          import {writeFileSync} from 'node:fs';
+          writeFileSync('site/dist/preview-build.json', JSON.stringify({
+            theme:'apple', source:'zijianz-nv/brew-atlas',
+            sourceCommit:'7daa7cc59dbfb0def1520fe9b750cfb2e6346393',
+            previewCommit:process.env.GITHUB_SHA,
+            repository:process.env.GITHUB_REPOSITORY
+          },null,2));
+          NODE
+      - name: Upload preview artifact
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        with:
+          path: site/dist
+          retention-days: 1
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy preview to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

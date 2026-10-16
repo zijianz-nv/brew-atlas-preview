@@ -1,0 +1,289 @@
+/* Local Apple-inspired preview. Keep production styles outside this scope. */
+.app.apple-ui .filter-dock.taxonomy-dock {
+  left:calc(50% + 114px);
+  bottom:24px;
+  width:min(850px,calc(100vw - 284px));
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,.8);
+  border-radius:22px;
+  background:rgba(250,250,252,.94);
+  color:#27272b;
+  box-shadow:0 12px 40px #10162320,0 2px 5px #1016230a,inset 0 1px 0 #fff;
+  -webkit-backdrop-filter:blur(28px) saturate(1.3);
+  backdrop-filter:blur(28px) saturate(1.3);
+}
+.app.apple-ui .taxonomy-dock .dock-main {
+  display:flex;
+  height:44px;
+  gap:12px;
+}
+.app.apple-ui .taxonomy-dock .search-box {
+  flex:1 1 0;
+  min-width:0;
+  height:44px;
+  gap:10px;
+  padding:0 8px;
+  border:0;
+  color:#86868c;
+}
+.app.apple-ui .taxonomy-dock .search-box input {
+  height:44px;
+  color:#242428;
+  font-size:14px;
+  letter-spacing:0;
+}
+.app.apple-ui .taxonomy-dock .search-box input::placeholder { color:#8b8b92; }
+.app.apple-ui .taxonomy-dock .search-box:focus-within>svg { color:#ad7528; }
+.app.apple-ui .taxonomy-dock .search-box>button:not(.search-country-chip) {
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  color:#73737b;
+}
+.app.apple-ui .taxonomy-dock .search-box kbd {
+  height:22px;
+  min-width:22px;
+  padding-top:3px;
+  border:1px solid #dedee3;
+  border-radius:6px;
+  background:#f5f5f7;
+  color:#98989f;
+}
+.app.apple-ui .taxonomy-dock .dock-actions { gap:5px; }
+.app.apple-ui .taxonomy-dock .sky-filter-toggle,
+.app.apple-ui .taxonomy-dock .dock-reset {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:40px;
+  min-width:40px;
+  padding:0 10px;
+  border-radius:12px;
+  color:#707078;
+  font-size:12px;
+}
+.app.apple-ui .taxonomy-dock .sky-filter-toggle[aria-expanded="true"] {
+  background:#ececef;
+  color:#313135;
+}
+.app.apple-ui .taxonomy-dock .dock-reset span { display:none; }
+.app.apple-ui .taxonomy-dock .dock-reset:disabled { opacity:.32; }
+.app.apple-ui .taxonomy-dock .random-button {
+  height:40px;
+  gap:7px;
+  padding:0 16px;
+  border:1px solid #b8823d1f;
+  border-radius:13px;
+  background:#e8c895;
+  color:#5b3d17;
+  font-size:12px;
+  font-weight:600;
+  box-shadow:0 1px 2px #392a1108;
+}
+.app.apple-ui .taxonomy-dock .random-button>span { display:inline; }
+.app.apple-ui .taxonomy-dock .random-button:disabled { opacity:.42; }
+.app.apple-ui .taxonomy-dock[data-overview-expanded="false"]>:not(.dock-main) { display:none; }
+.app.apple-ui .taxonomy-dock .facet-tabs {
+  margin-top:10px;
+  padding-top:10px;
+  gap:4px;
+  border-top:1px solid #20202a12;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.app.apple-ui .taxonomy-dock .facet-tabs>button {
+  height:34px;
+  flex:none;
+  gap:6px;
+  padding:0 11px;
+  border-radius:9px;
+  color:#777780;
+  font-size:11px;
+}
+.app.apple-ui .taxonomy-dock .facet-tabs>button.active {
+  background:#ececef;
+  color:#333338;
+}
+.app.apple-ui .taxonomy-dock .facet-tabs b {
+  width:16px;
+  height:16px;
+  background:#e6c697;
+  color:#64451e;
+  font-size:9px;
+}
+.app.apple-ui .taxonomy-dock .facet-chips { gap:7px; }
+.app.apple-ui .taxonomy-dock .facet-chips button {
+  min-height:34px;
+  padding:7px 11px;
+  border:1px solid #dfdfe4;
+  border-radius:18px;
+  background:#fff9;
+  color:#61616b;
+  font-size:11px;
+}
+.app.apple-ui .taxonomy-dock .facet-chips button small { color:#93939b; font-size:10px; }
+.app.apple-ui .taxonomy-dock .facet-chips button.active {
+  border-color:#c59959;
+  background:#f4e6d1;
+  color:#79531e;
+}
+.app.apple-ui .taxonomy-dock .facet-chips button.active small { color:#9b793f; }
+.app.apple-ui .taxonomy-dock .facet-chips button:disabled { opacity:.38; }
+.app.apple-ui .taxonomy-dock .family-chips { margin-top:9px; margin-right:0; padding-right:0; }
+.app.apple-ui .taxonomy-dock .search-country-chip {
+  min-height:30px;
+  padding:4px 8px;
+  border:1px solid #d6bc9266;
+  border-radius:8px;
+  background:#f2e7d7;
+  color:#80602f;
+  font-size:11px;
+}
+.app.apple-ui .taxonomy-dock .facet-panel {
+  bottom:calc(100% + 12px);
+  width:440px;
+  max-height:min(480px,calc(100dvh - 320px));
+  border:1px solid #ffffffc9;
+  border-radius:20px;
+  background:rgba(250,250,252,.98);
+  box-shadow:0 16px 50px #14182624,0 2px 6px #1418260b;
+  color:#303036;
+  scrollbar-color:#ceced5 transparent;
+}
+.app.apple-ui .taxonomy-dock .facet-panel>header {
+  min-height:54px;
+  padding:8px 12px 8px 18px;
+  border-bottom:1px solid #2525310d;
+  background:#fafafcf5;
+}
+.app.apple-ui .taxonomy-dock .facet-panel>header strong { font-size:14px; font-weight:600; }
+.app.apple-ui .taxonomy-dock .facet-panel>header>span { color:#929299; font-size:11px; }
+.app.apple-ui .taxonomy-dock .facet-panel .icon-button {
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:#ededef;
+  color:#76767e;
+}
+.app.apple-ui .taxonomy-dock .facet-panel-body { padding:18px; }
+.app.apple-ui .taxonomy-dock .facet-select { color:#717179; font-size:12px; }
+.app.apple-ui .taxonomy-dock .facet-select select,
+.app.apple-ui .taxonomy-dock .year-select select {
+  min-height:42px;
+  border:1px solid #dcdce2;
+  border-radius:10px;
+  background:#fff;
+  color:#38383f;
+  font-size:12px;
+  color-scheme:light;
+}
+.app.apple-ui .taxonomy-dock select option { background:#fff; color:#35353a; }
+.app.apple-ui .taxonomy-dock .facet-section+.facet-section { border-color:#e4e4e9; }
+.app.apple-ui .taxonomy-dock .facet-section h3 { color:#575760; font-size:12px; font-weight:600; }
+.app.apple-ui .taxonomy-dock .facet-note { color:#8b8b94; font-size:11px; line-height:1.7; }
+.app.apple-ui .taxonomy-dock .check-filter { min-height:36px; color:#62626c; font-size:12px; }
+.app.apple-ui .taxonomy-dock .check-filter input { width:17px; height:17px; accent-color:#ab752f; }
+.app.apple-ui .taxonomy-dock .abv-filter { margin-top:10px; padding-top:10px; border-color:#20202a12; }
+.app.apple-ui .taxonomy-dock .abv-filter-header { gap:10px; color:#71717a; font-size:11px; }
+.app.apple-ui .taxonomy-dock .abv-filter-header>strong { color:#6d6d77; }
+.app.apple-ui .taxonomy-dock .abv-filter-value { color:#a27636; }
+.app.apple-ui .taxonomy-dock .abv-filter-note { color:#96969e; font-size:10px; }
+.app.apple-ui .taxonomy-dock .abv-filter-clear { color:#9c6b2d; border-radius:7px; }
+.app.apple-ui .taxonomy-dock .abv-range-track::before { background:#dedee4; }
+.app.apple-ui .taxonomy-dock .abv-range-selected { background:#bf9458; }
+.app.apple-ui .taxonomy-dock .abv-range-track input[type="range"]::-webkit-slider-thumb {
+  border:1px solid #dedee4;
+  background:#fff;
+  box-shadow:0 1px 4px #18182225,0 1px 1px #1818220d;
+}
+.app.apple-ui .taxonomy-dock .abv-range-track input[type="range"]::-moz-range-thumb {
+  border:1px solid #dedee4;
+  background:#fff;
+  box-shadow:0 1px 4px #18182225;
+}
+.app.apple-ui .taxonomy-dock .abv-range-track input[type="range"]:focus-visible::-webkit-slider-thumb { outline-color:#b48341; }
+.app.apple-ui .taxonomy-dock .abv-range-track input[type="range"]:focus-visible::-moz-range-thumb { outline-color:#b48341; }
+.app.apple-ui .taxonomy-dock .abv-filter-scale { color:#97979f; font-size:9px; }
+.app.apple-ui .taxonomy-dock .year-filter { color:#71717a; }
+.app.apple-ui .taxonomy-dock .year-select { font-size:12px; }
+.app.apple-ui .taxonomy-dock .year-filter-heading small { color:#93939b; opacity:1; }
+.app.apple-ui .taxonomy-dock .year-filter-heading button,
+.app.apple-ui .taxonomy-dock .year-more { color:#a07333; }
+.app.apple-ui .taxonomy-dock .year-beer-result {
+  min-height:62px;
+  padding:10px;
+  border:1px solid #e9e9ed;
+  border-radius:12px;
+  background:#fff;
+  color:#919199;
+}
+.app.apple-ui .taxonomy-dock .year-beer-result strong { color:#424249; font-size:12px; }
+.app.apple-ui .taxonomy-dock .year-beer-result small,
+.app.apple-ui .taxonomy-dock .year-no-image { color:#9999a1; }
+.app.apple-ui .taxonomy-dock :is(button,select):focus-visible {
+  outline:2px solid #b88947;
+  outline-offset:3px;
+}
+.app.apple-ui .taxonomy-dock .search-box:focus-within {
+  border-radius:12px;
+  box-shadow:inset 0 0 0 2px #bb945d50;
+}
+@media (hover:hover) and (pointer:fine) {
+  .app.apple-ui .taxonomy-dock :is(.sky-filter-toggle,.dock-reset,.facet-tabs>button,.search-box>button:not(.search-country-chip)):not(:disabled):hover { background:#e9e9ee; color:#3c3c43; }
+  .app.apple-ui .taxonomy-dock .random-button:not(:disabled):hover { background:#dfbc83; color:#503412; }
+  .app.apple-ui .taxonomy-dock .facet-chips button:not(:disabled):hover { border-color:#bda27a; background:#f4eee5; color:#795b30; }
+  .app.apple-ui .taxonomy-dock .year-beer-result:hover { background:#f3f3f6; }
+}
+@media (max-width:700px) {
+  .app.apple-ui .filter-dock.taxonomy-dock {
+    left:12px;
+    right:12px;
+    bottom:88px;
+    width:auto;
+    padding:6px 7px;
+    transform:none;
+    border-radius:20px;
+    background:rgba(250,250,252,.97);
+  }
+  .app.apple-ui .filter-dock.taxonomy-dock .dock-main { height:44px; gap:4px; }
+  .app.apple-ui .filter-dock.taxonomy-dock .search-box { height:44px; gap:6px; padding:0 5px; }
+  .app.apple-ui .filter-dock.taxonomy-dock .search-box input { height:44px; font-size:16px; }
+  .app.apple-ui .taxonomy-dock .search-box>svg { width:17px; height:17px; }
+  .app.apple-ui .taxonomy-dock .dock-actions { gap:3px; }
+  .app.apple-ui .filter-dock.taxonomy-dock :is(.sky-filter-toggle,.random-button,.dock-reset) { min-width:44px; height:44px; padding:0 10px; }
+  .app.apple-ui .taxonomy-dock .sky-filter-toggle>span { display:none; }
+  .app.apple-ui .taxonomy-dock .dock-reset:disabled { display:none; }
+  .app.apple-ui .filter-dock.taxonomy-dock .dock-reset:not(:disabled) { display:flex; }
+  .app.apple-ui .taxonomy-dock .random-button { gap:5px; font-size:11px; border-radius:13px; }
+  .app.apple-ui .taxonomy-dock .random-button>svg { width:16px; height:16px; }
+  .app.apple-ui .filter-dock.taxonomy-dock .dock-actions .random-button>span { display:inline; }
+  .app.apple-ui .taxonomy-dock .search-country-chip { min-height:32px; max-width:40%; font-size:10px; }
+  .app.apple-ui .taxonomy-dock .facet-tabs { gap:2px; justify-content:flex-start; margin-top:6px; padding-top:7px; }
+  .app.apple-ui .taxonomy-dock .facet-tabs>button { min-height:40px; padding:0 9px; font-size:11px; }
+  .app.apple-ui .taxonomy-dock .facet-tabs>button svg { width:14px; height:14px; }
+  .app.apple-ui .taxonomy-dock .facet-chips button { min-height:40px; font-size:11px; padding:8px 11px; }
+  .app.apple-ui .taxonomy-dock .family-chips { margin-top:6px; gap:6px; }
+  .app.apple-ui .taxonomy-dock .abv-filter { margin:8px 5px 4px; padding-top:9px; }
+  .app.apple-ui .taxonomy-dock .abv-filter-header { gap:7px; font-size:10px; }
+  .app.apple-ui .taxonomy-dock .abv-filter-note { font-size:9px; }
+  .app.apple-ui .taxonomy-dock .abv-range-track { height:35px; }
+  .app.apple-ui .taxonomy-dock .abv-range-track input[type="range"] { height:35px; }
+  .app.apple-ui .taxonomy-dock .abv-range-track::before,
+  .app.apple-ui .taxonomy-dock .abv-range-selected { top:16px; }
+  .app.apple-ui .taxonomy-dock .facet-panel { width:100%; bottom:calc(100% + 10px); max-height:calc(100dvh - 390px); border-radius:18px; }
+  .app.apple-ui .taxonomy-dock .facet-panel>header { min-height:52px; }
+  .app.apple-ui .taxonomy-dock .facet-panel .icon-button { width:40px; height:40px; }
+  .app.apple-ui .taxonomy-dock .facet-panel-body { padding:14px; }
+  .app.apple-ui .taxonomy-dock .facet-select select,
+  .app.apple-ui .taxonomy-dock .year-select select { min-height:44px; font-size:16px; }
+  .app.apple-ui .taxonomy-dock .facet-panel .check-filter { min-height:44px; }
+}
+@media (max-width:374px) {
+  .app.apple-ui .filter-dock.taxonomy-dock .random-button { width:44px; padding:0; }
+  .app.apple-ui .filter-dock.taxonomy-dock .dock-actions .random-button>span { display:none; }
+  .app.apple-ui .filter-dock.taxonomy-dock .dock-reset { min-width:32px; width:32px; padding:0; }
+}
+@media (prefers-reduced-transparency:reduce) {
+  .app.apple-ui .filter-dock.taxonomy-dock,
+  .app.apple-ui .taxonomy-dock .facet-panel { background:#fafafc; -webkit-backdrop-filter:none; backdrop-filter:none; }
+}
